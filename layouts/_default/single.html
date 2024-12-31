@@ -27,6 +27,16 @@
         {{ .Content }}
       </article>
     </div>
+
+    <!-- Display subposts -->
+    {{ if .Params.subposts }}
+      {{ range .Params.subposts }}
+        {{ with $.GetPage . }}
+          {{ partial "post_preview_card" . }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+
   </div>
 
   {{ if or .Params.tags  ($.Param "socialShare") (ne .Type "page") }}
