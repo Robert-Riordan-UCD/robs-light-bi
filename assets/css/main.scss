@@ -1210,6 +1210,11 @@ ul.share li:hover .fab {
   flex-direction: row;
 }
 
+.my-grid-item {
+  width: 33%;
+  min-width: 300px;
+}
+
 /* --- Dark mode --- */
 
 :root[data-theme="dark"] {
