@@ -633,6 +633,22 @@ footer .theme-by {
   margin-bottom: 0;
 }
 
+.post-preview-card-tags {
+  color: #999;
+  font-size: 15px;
+  text-decoration: none;
+  padding: 0px 5px;
+  content: "#";
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+
+.post-preview-card-tags:hover {
+  border-radius: 2px;
+  color: rgb(81, 81, 82);
+  background-color: #CCC;
+}
+
 @media only screen and (min-width: 768px) {
   .post-preview .blog-tags {
     margin-top: 10px;

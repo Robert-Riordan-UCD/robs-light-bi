@@ -30,9 +30,19 @@
             </div>
 
             {{ if .Params.previewImage }}
-                <img src="{{ .Params.previewImage }}">
+                <img src="{{ .Params.previewImage }}" style="border-radius: 3px;">
             {{ end }}
 
+            {{ if .Params.tags }}
+            <div>
+                {{ range .Params.tags }}
+                <a href="{{ $.Site.LanguagePrefix | absURL }}tags/{{ . | urlize }}/" class="post-preview-card-tags">
+                    #{{ . }}
+                </a>
+                {{ end }}
+            </div>
+            {{ end }}
+            
             {{ with partial "get_image" . }}
             <img src="{{ ( .Resize " 500x" ).RelPermalink }}" alt="{{ .Title }}"
                 class="card-img-bottom img-fluid lazyload">
