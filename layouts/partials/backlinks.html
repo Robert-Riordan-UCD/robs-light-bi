@@ -1,0 +1,20 @@
+<!-- Display links in the navigation bar to back track to parent posts -->
+
+{{ $pages := slice . }}
+{{ range seq 100 }}
+  {{ $p := index (last 1 $pages) 0 }}
+  {{ if $p.Parent }}
+    {{ $pages = $pages | append $p.Parent }}
+  {{ else }}
+    {{ break }}
+  {{ end }}
+{{ end }}
+
+{{ if ( ge $pages.Len 2 ) }}
+  <!-- Ignore the first two pages. (Home and posts/about etc.) -->
+  {{ $pages = $pages | first (math.Sub $pages.Len 2) }}
+
+  {{ range $pages.Reverse }}
+  &nbsp;/&nbsp; <a href="{{ "" | absLangURL }}{{ .RelPermalink }}">{{ .Title }}</a>
+  {{ end }}
+{{ end }}
