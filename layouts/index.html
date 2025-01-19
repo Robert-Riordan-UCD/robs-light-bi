@@ -19,28 +19,17 @@
     {{ end }}
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script>
+    <script src="{{ "js/imagesLoaded.js" | absURL }}"></script>
+    <script src="{{ "js/masonry.js" | absURL }}"></script>
     <script>
-      // var grid = document.querySelector('.my-grid');
-      // var msnry = new Masonry( grid, {
-      //   itemSelector: '.my-grid-item',
-      // });
-      var masonryRow = document.querySelector('.my-grid'); // Targeting the Masonry container
+      var masonryRow = document.querySelector('.my-grid');
       if (masonryRow) {
           imagesLoaded(masonryRow, function() {
-              // Initialize Masonry after all images have loaded
               new Masonry(masonryRow, {
                 itemSelector: '.my-grid-item'
               });
           });
         }
-    // $(window).load(function(){
-    //     var $container = $('.my-grid');
-    //     $container.imagesLoaded( function() {
-    //         $container.masonry({itemSelector: '.my-grid-item'});
-    //     });
-    // });
     </script>
 
   </div>
