@@ -4,6 +4,6 @@ date: {{ .Date }}
 description : "Description goes here..."
 tags: [""]
 image : ""
-draft: true
+draft: false
 ---
 
