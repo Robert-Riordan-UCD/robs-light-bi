@@ -37,19 +37,14 @@
               {{ end }}
 
               {{ if eq .Type "list" }}
-              <h1 class="bino">{{ if .Data.Singular }}#{{ end }}{{ .Title }}</h1>
-              {{ else }}
-
-              {{if .Page.IsPage}}
-              <h1 class="fw-semibold display-5 lh-1 mb-3"> {{ with $title }}
-                {{.}}
-                {{ else }}
-                <br />
-                {{ end }}
-              </h1>
-              {{ else }}
-
-              {{ end }}
+                <h1 class="bino">{{ if .Data.Singular }}#{{ end }}{{ .Title }}</h1>
+              {{ else if eq .Type "posts" }}
+                <h1 class="fw-semibold display-5 lh-1 mb-3">
+                  {{ .Title }}
+                </h1>
+                <p class="post-meta">
+                  {{ partial "post_meta_notes.html" . }}
+                </p>
               {{ end }}
 
               {{ if $subtitle }}
