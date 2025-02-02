@@ -11,7 +11,7 @@
           {{.}}
         </div>
       {{ end }}
-      <div class="row">
+      <div class="my-grid">
         {{ range .Paginator.Pages }}
           {{ partial "post_preview_card" .}}
         {{ end }}
@@ -31,5 +31,19 @@
     </div>
   </div>
 </div>
+
+<script src="{{ "js/imagesLoaded.js" | absURL }}"></script>
+<script src="{{ "js/masonry.js" | absURL }}"></script>
+<script>
+  var masonryRow = document.querySelector('.my-grid');
+  if (masonryRow) {
+      imagesLoaded(masonryRow, function() {
+          new Masonry(masonryRow, {
+            itemSelector: '.my-grid-item',
+            horizontalOrder: true
+          });
+      });
+    }
+</script>
 
 {{ end }}
