@@ -1215,6 +1215,30 @@ ul.share li:hover .fab {
   min-width: 300px;
 }
 
+.post-status {
+  background-color: #c4a12ebb;
+  border-radius: 8px;
+  width: fit-content;
+  padding: 1px 5px;
+  font-size: 15px;
+}
+
+.post-status-done {
+  background-color: #2ec459bb;
+  border-radius: 8px;
+  width: fit-content;
+  padding: 1px 5px;
+  font-size: 15px;
+}
+
+.post-status-wip {
+  background-color: #c4a12ebb;
+  border-radius: 8px;
+  width: fit-content;
+  padding: 1px 5px;
+  font-size: 15px;
+}
+
 /* --- Dark mode --- */
 
 :root[data-theme="dark"] {

@@ -9,10 +9,21 @@
                 </h3>
                 {{ end }}
 
-                <p class="post-meta">
-                    {{ partial "post_meta_notes.html" . }}
-                </p>
-                {{ print }}
+                {{ if .Params.status }}
+                {{ if eq .Params.status "Done" }}
+                    <div class="post-status-done">
+                        {{ .Params.status }}
+                    </div>
+                {{ else if eq .Params.status "Work in progress" }}
+                    <div class="post-status-wip">
+                        {{ .Params.status }}
+                    </div>
+                {{ else }}
+                    <div class="post-status">
+                        {{ .Params.status }}
+                    </div>
+                {{ end }}
+                {{ end }}
 
                 <div class="post-entry">
                     {{ if .Description }}
@@ -22,11 +33,6 @@
                     {{ .Summary }}
                     {{ end }}
                 </div>
-
-                <div class="read-more-section">
-                    <!-- post-read-more  -->
-                    <h6 class="text-muted link-underline">{{ i18n "readMore" }} <i class="bi bi-arrow-right"></i></h6>
-                </div>
             </div>
 
             {{ if .Params.previewImage }}
@@ -34,7 +40,7 @@
             {{ end }}
 
             {{ if .Params.tags }}
-            <div>
+            <div style="text-align: center;">
                 {{ range .Params.tags }}
                 <a href="{{ $.Site.LanguagePrefix | absURL }}tags/{{ . | urlize }}/" class="post-preview-card-tags">
                     #{{ . }}
