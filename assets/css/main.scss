@@ -1239,10 +1239,12 @@ ul.share li:hover .fab {
   font-size: 15px;
 }
 
-
-h1, h2, h3, h4, h5, h6 {
-  color:rgb(19, 185, 19);
-}
+/* Add accent color if it is set */
+{{ with .Site.Params.accentColor }}
+  h1, h2, h3, h4, h5, h6, .navbar-brand, .nav-link, .post-title {
+    color: {{ . }}
+  }
+{{ end }}
 
 /* --- Dark mode --- */
 
