@@ -1246,6 +1246,14 @@ ul.share li:hover .fab {
   }
 {{ end }}
 
+{{ if .Site.Params.accentColor }}
+{{ with .Site.Params.secondaryAccentColor }}
+.post-title:hover, .navbar-brand:hover, h2, h3, h4, h5, h6, {
+  color: {{ . }}
+}
+{{ end }}
+{{ end }}
+
 /* --- Dark mode --- */
 
 :root[data-theme="dark"] {
