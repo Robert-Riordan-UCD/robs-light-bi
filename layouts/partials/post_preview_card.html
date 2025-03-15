@@ -36,7 +36,7 @@
             </div>
 
             {{ if .Params.previewImage }}
-                <img src="{{ .Params.previewImage }}" style="border-radius: 3px;">
+                <img src="{{ .Params.previewImage }}" style="border-radius: 3px; max-height:300px;">
             {{ end }}
 
             {{ if .Params.tags }}
