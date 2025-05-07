@@ -1254,6 +1254,30 @@ ul.share li:hover .fab {
 {{ end }}
 {{ end }}
 
+.fa {
+  padding: 5px;
+  margin: 5px;
+  text-align: center;
+  border-radius: 50%;
+}
+
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+{{ with .Site.Params.accentColor }}
+  .fa-linkedin {
+    background: {{ . }};
+    color: white;
+  }
+
+  .fa-github {
+    background: {{ . }};
+    color: white;
+  }
+{{ end }}
+
 /* --- Dark mode --- */
 
 :root[data-theme="dark"] {

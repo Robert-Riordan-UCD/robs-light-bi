@@ -1,0 +1,8 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+{{ with .Site.Params.linkedin }}
+    <a href="{{ . }}" class="fa fa-linkedin" target="_blank"></a>
+{{ end }}
+{{ with .Site.Params.github }}
+    <a href="{{ . }}" class="fa fa-github" target="_blank"></a>
+{{ end }}
